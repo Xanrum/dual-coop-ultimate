@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccuixvpraqxmx"]
 
-[ext_resource type="Script" path="res://Scenes/Main/PixelPerfectSprite.cs" id="1_kahv6"]
+[ext_resource type="Script" path="res://Scenes/Main/Player.cs" id="1_8gk72"]
 [ext_resource type="Texture2D" uid="uid://drki152sg1mmy" path="res://Sprites/player.png" id="2_ch6ni"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4tmkx"]
 radius = 5.0
 
 [node name="Scene" type="Node2D"]
-script = ExtResource("1_kahv6")
+script = ExtResource("1_8gk72")
 
 [node name="Area" type="Area2D" parent="."]
 
@@ -16,3 +16,30 @@ texture = ExtResource("2_ch6ni")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
 shape = SubResource("CircleShape2D_4tmkx")
+
+[node name="bars" type="ColorRect" parent="."]
+offset_left = -12.0
+offset_top = -10.0
+offset_right = 12.0
+offset_bottom = -7.0
+color = Color(0, 0, 0, 1)
+
+[node name="health" type="ColorRect" parent="bars"]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 1.0
+color = Color(1, 0, 0, 1)
+
+[node name="stamina" type="ColorRect" parent="bars"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 24.0
+offset_bottom = 2.0
+color = Color(0, 1, 0, 1)
+
+[node name="mana" type="ColorRect" parent="bars"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 24.0
+offset_bottom = 3.0
+color = Color(0, 0, 1, 1)
